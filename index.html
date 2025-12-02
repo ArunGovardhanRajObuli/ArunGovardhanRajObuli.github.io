@@ -88,6 +88,48 @@
       color: #d1d5db;
     }
 
+    /* Header call-to-action buttons */
+    .header-actions {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.45rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: #020617;
+      font-weight: 600;
+      border-color: rgba(56, 189, 248, 0.9);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
     /* Simple nav */
     nav {
       margin-bottom: 1.4rem;
@@ -332,6 +374,36 @@
       white-space: nowrap;
     }
 
+    /* Learning now */
+    .learning-list {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .learning-list li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .testimonial-author {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 0.2rem;
+    }
+
     /* Footer */
     footer {
       margin-top: 2rem;
@@ -375,6 +447,27 @@
         I’m currently looking for roles in data science / machine learning engineering where I can
         work on model development and end-to-end ML pipelines.
       </p>
+
+      <div class="header-actions">
+        <!-- Update this href to match your actual resume path in the repo -->
+        <a
+          class="btn-pill btn-primary"
+          href="assets/Arun_Govardhan_Raj_Obuli_Resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Download resume
+        </a>
+
+        <a
+          class="btn-pill btn-secondary"
+          href="https://github.com/ArunGovardhanRajObuli"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub profile ↗
+        </a>
+      </div>
     </header>
 
     <!-- Simple nav -->
@@ -383,6 +476,7 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
+      <a href="#recommendations">Recommendations</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -405,7 +499,6 @@
             </div>
           </div>
 
-          <!-- Simplified pipeline (text only) -->
           <div class="pipeline-diagram">
             <span class="pipeline-step">🎬 Film</span>
             <span class="pipeline-arrow">→</span>
@@ -618,6 +711,15 @@
           </div>
 
         </div>
+
+        <div style="margin-top: 1rem; border-top: 1px solid #1f2937; padding-top: 0.7rem;">
+          <div class="skills-group-title">What I'm learning now</div>
+          <ul class="learning-list">
+            <li>Strengthening MLOps fundamentals: experiment tracking, simple deployment patterns and monitoring.</li>
+            <li>Exploring video-LLMs and better evaluation strategies for multimodal pipelines.</li>
+            <li>Learning about model distillation and lightweight deployment for multimedia use cases.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -649,6 +751,28 @@
       <div class="card">
         <div class="item-title">Bachelor’s Degree – Electronics and Communication Engineering</div>
         <div class="item-meta">RV College of Engineering · 2018 – 2022</div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDATIONS -->
+    <section id="recommendations">
+      <h2 class="section-title">Recommendations</h2>
+      <div class="card">
+        <div class="testimonials">
+          <div>
+            <p class="testimonial-quote">
+              “Arun approaches problems methodically, has good critical thinking and is very reliable when it comes to meeting deadlines.”
+            </p>
+            <p class="testimonial-author">— Paraphrased feedback from a manager</p>
+          </div>
+          <div>
+            <p class="testimonial-quote">
+              “On his dissertation project, he consistently pushed beyond the brief, especially around
+              evaluation and handling edge cases.”
+            </p>
+            <p class="testimonial-author">— Paraphrased feedback from an academic supervisor</p>
+          </div>
+        </div>
       </div>
     </section>
 
