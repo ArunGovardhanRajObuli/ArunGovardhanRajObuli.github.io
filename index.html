@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Arun Govardhan Raj Obuli | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Arun Govardhan Raj Obuli – Machine Learning practitioner with experience in deep learning, computer vision, NLP and multimodal systems.">
+
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;          /* dark navy */
+      color: #e5e7eb;               /* light grey text */
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Layout */
+    .page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 1.5rem 1.1rem 2.5rem;
+    }
+
+    section {
+      margin-top: 2.2rem; /* a bit more breathing room */
+    }
+
+    /* Simple cards */
+    .card {
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      padding: 1.1rem 1.1rem;
+    }
+
+    .card.project-card {
+      border-color: #38bdf8; /* highlight projects slightly */
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 1.5rem;
+    }
+
+    .name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #f9fafb;
+    }
+
+    .role {
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .contact {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    .contact div {
+      margin-bottom: 0.1rem;
+    }
+
+    .summary {
+      margin-top: 0.9rem;
+      font-size: 0.95rem;
+      color: #d1d5db;
+    }
+
+    /* Simple nav */
+    nav {
+      margin-bottom: 1.4rem;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    nav a {
+      margin-right: 0.8rem;
+      color: #9ca3af;
+    }
+
+    nav a:hover {
+      color: #e5e7eb;
+      text-decoration: underline;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .item-meta {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-top: 0.1rem;
+    }
+
+    .item-body {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .item-body ul {
+      margin-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .item-body li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Projects */
+    .project {
+      margin-bottom: 0.9rem;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.1rem;
+    }
+
+    .project-points {
+      margin-left: 1rem;
+      margin-top: 0.35rem;
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .project-points li {
+      margin-bottom: 0.25rem;
+    }
+
+    .project-tech {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .project-links {
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    /* --- CASE STUDY STYLES --- */
+
+    .case-study {
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid rgba(56, 189, 248, 0.6);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.16), transparent 60%),
+                  rgba(15, 23, 42, 0.95);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .case-study::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.18), transparent 30%, transparent 70%, rgba(96, 165, 250, 0.18));
+      mix-blend-mode: soft-light;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    /* Slightly toned-down variant for secondary case study */
+    .case-study.secondary {
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.85);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 60%),
+                  rgba(15, 23, 42, 0.96);
+    }
+
+    .case-inner {
+      position: relative;
+      z-index: 1;
+      padding: 1.1rem 1.1rem 1.2rem;
+    }
+
+    .case-header-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+    }
+
+    .metric-chip {
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e0f2fe;
+    }
+
+    .pipeline-diagram {
+      margin-top: 0.5rem;
+      padding: 0.6rem 0.7rem;
+      border-radius: 8px;
+      border: 1px dashed rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      background: rgba(15, 23, 42, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pipeline-step {
+      white-space: nowrap;
+    }
+
+    .pipeline-arrow {
+      opacity: 0.6;
+    }
+
+    .case-section-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-top: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .case-list {
+      margin-left: 1rem;
+      margin-top: 0.2rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+
+    .case-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .case-metrics {
+      margin-top: 0.2rem;
+      font-size: 0.85rem;
+      color: #cbd5f5;
+    }
+
+    .case-links {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* Skills – grid of chips */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .skills-group {
+      padding: 0.7rem 0.75rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+    }
+
+    .skills-group-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #9ca3af;
+    }
+
+    .skills-chips {
+      margin-top: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .skill-chip {
+      font-size: 0.8rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      color: #e5e7eb;
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* Small screens */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.3rem 1rem 2rem;
+      }
+      .name {
+        font-size: 1.6rem;
+      }
+      .case-header-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 class="name">Arun Govardhan Raj Obuli</h1>
+      <div class="role">Machine Learning · Computer Vision · NLP</div>
+
+      <div class="contact">
+        <div><strong>Phone:</strong> <a href="tel:+917892133644">+91 7892133644</a></div>
+        <div><strong>Email:</strong> <a href="mailto:rajarun9476@gmail.com">rajarun9476@gmail.com</a></div>
+        <div><strong>Location:</strong> Bangalore, KA</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arun-govardhan-r-o-a28802228/" target="_blank">linkedin.com/in/ArunGovardhan</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/ArunGovardhanRajObuli" target="_blank">github.com/ArunGovardhanRajObuli</a></div>
+      </div>
+
+      <p class="summary">
+        Machine Learning practitioner with experience across deep learning, computer vision,
+        NLP and multimodal systems. I enjoy taking messy, real-world data problems from first
+        prototype to measurable impact.<br /><br />
+        I’m currently looking for roles in data science / machine learning engineering where I can
+        work on model development and end-to-end ML pipelines.
+      </p>
+    </header>
+
+    <!-- Simple nav -->
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- CASE STUDY: PROJECT 1 -->
+      <div class="case-study" id="case-multimodal">
+        <div class="case-inner">
+          <div class="case-header-row">
+            <div>
+              <div class="project-title">Multimodal Film Summarization & Reel Generation</div>
+              <div class="project-meta">Whisper · Qwen LLM · CLIP · Edge-TTS · MoviePy</div>
+            </div>
+            <div class="metric-chips">
+              <span class="metric-chip">~80% context coverage</span>
+              <span class="metric-chip">~70% frame alignment</span>
+              <span class="metric-chip">45–50 mins per 60-min film</span>
+            </div>
+          </div>
+
+          <!-- Simplified pipeline (text only) -->
+          <div class="pipeline-diagram">
+            <span class="pipeline-step">🎬 Film</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🎙 Whisper ASR</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🧠 Qwen Summary (20 sentences)</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🖼 CLIP Scene Retrieval</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🔊 Edge-TTS Narration</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🎞 MoviePy Reel</span>
+          </div>
+
+          <div class="case-section-title">What I built</div>
+          <ul class="case-list">
+            <li>Designed the full pipeline from ASR to narratively coherent reel.</li>
+            <li>Prompt-engineered Qwen for grounded summarization and visual cues.</li>
+            <li>Implemented CLIP retrieval with temporal refinement for better alignment.</li>
+            <li>Automated narration generation and reel assembly via MoviePy.</li>
+          </ul>
+
+          <div class="case-section-title">Results</div>
+          <ul class="case-list case-metrics">
+            <li>~80% major plot coverage in summarized narrative.</li>
+            <li>~70% visual alignment accuracy frame-to-sentence.</li>
+            <li>~45–50 mins runtime on GPU per 60-min film.</li>
+          </ul>
+
+          <div class="case-section-title">Challenges & solutions</div>
+          <ul class="case-list">
+            <li><strong>LLM hallucination:</strong> solved via transcript-grounded structure.</li>
+            <li><strong>CLIP mismatches:</strong> improved through more visual rewriting.</li>
+            <li><strong>Performance:</strong> optimized through quantization and batching.</li>
+          </ul>
+
+          <div class="case-section-title">Next steps</div>
+          <ul class="case-list">
+            <li>Emotion-aware TTS for more dramatic delivery.</li>
+            <li>Better shot-importance scoring (motion + attention cues).</li>
+            <li>Faster pipeline using distilled models.</li>
+          </ul>
+
+          <div class="case-links">
+            <a href="https://github.com/ArunGovardhanRajObuli/Projects/blob/acfb89d000a96da2e41201849a89345f70afac7e/Msc%20dissertation%20code.ipynb" target="_blank">
+              GitHub ↗
+            </a>
+            &nbsp;·&nbsp;
+            <a href="https://drive.google.com/file/d/1bEV99CASBuMKqaJ2fXAAl5nayyKUZhbJ/view" target="_blank" rel="noreferrer">
+              Sample reel (video) ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE STUDY: PROJECT 2 (CIFAR-10) -->
+      <div class="case-study secondary" style="margin-top: 1.3rem;">
+        <div class="case-inner">
+          <div class="case-header-row">
+            <div>
+              <div class="project-title">CIFAR-10 Classification – Improved CNN</div>
+              <div class="project-meta">PyTorch · Regularization · Training Strategy</div>
+            </div>
+            <div class="metric-chips">
+              <span class="metric-chip">94.45% test accuracy</span>
+              <span class="metric-chip">100 epochs</span>
+              <span class="metric-chip">↓ overfitting</span>
+            </div>
+          </div>
+
+          <div class="pipeline-diagram">
+            <span class="pipeline-step">📦 CIFAR-10</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🧱 4× multi-branch CNN</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">🧪 RandAugment / Cutout / Mixup</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">📉 OneCycleLR + Adam</span>
+            <span class="pipeline-arrow">→</span>
+            <span class="pipeline-step">✅ 94.45% accuracy</span>
+          </div>
+
+          <div class="case-section-title">What I built</div>
+          <ul class="case-list">
+            <li>Redesigned a 2-block attention-weighted CNN baseline (~67% accuracy) into a deeper 4-branch architecture with 3×3 and 5×5 convolutions, pooling and GAP/Dropout.</li>
+            <li>Implemented a strong regularization stack: RandAugment, Cutout, Mixup and label smoothing for better generalization.</li>
+            <li>Configured training with OneCycleLR + Adam to get smoother convergence and avoid plateauing.</li>
+          </ul>
+
+          <div class="case-section-title">Results</div>
+          <ul class="case-list case-metrics">
+            <li>Improved test accuracy from ~67% baseline to 94.45% in 100 epochs.</li>
+            <li>Training and validation curves showed reduced overfitting and more stable convergence.</li>
+          </ul>
+
+          <div class="case-section-title">Challenges & solutions</div>
+          <ul class="case-list">
+            <li><strong>Overfitting on small images:</strong> Addressed with aggressive but controlled data augmentation (RandAugment, Cutout, Mixup).</li>
+            <li><strong>Unstable training:</strong> Switching to OneCycleLR + Adam provided a smoother learning rate schedule and better final performance.</li>
+          </ul>
+
+          <div class="case-section-title">Next steps</div>
+          <ul class="case-list">
+            <li>Compare against modern architectures (e.g., Wide-ResNet, EfficientNet) as baselines.</li>
+            <li>Experiment with cosine annealing + warm restarts and stochastic depth.</li>
+          </ul>
+
+          <div class="case-links">
+            <a href="https://github.com/ArunGovardhanRajObuli/Projects/blob/acfb89d000a96da2e41201849a89345f70afac7e/CIFAR_10_Neural_Networks_Project.ipynb" target="_blank">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other projects: normal simple cards -->
+
+      <div class="card project-card" style="margin-top: 1.2rem;">
+        <div class="project">
+          <div class="project-title">Deception Detection from Audio</div>
+          <div class="project-meta">Audio · Classical ML</div>
+          <ul class="project-points">
+            <li>Engineered a pipeline with windowed audio segmentation and features (MFCCs, pitch, ZCR, spectral features) plus PCA for dimensionality reduction.</li>
+            <li>Trained an SVM-RBF with GroupShuffleSplit to avoid story-level leakage.</li>
+          </ul>
+          <p class="project-tech">
+            Result: 75.3% test accuracy and 0.85 recall on the deceptive class on noisy real-world audio.
+          </p>
+          <p class="project-links">
+            <a href="https://github.com/ArunGovardhanRajObuli/Projects/blob/acfb89d000a96da2e41201849a89345f70afac7e/Machine_Learning_mini_project.ipynb" target="_blank">GitHub ↗</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="card project-card">
+        <div class="project">
+          <div class="project-title">Brain Tumor Detection & Segmentation</div>
+          <div class="project-meta">Medical Imaging</div>
+          <ul class="project-points">
+            <li>Compared a ResNet classifier and a U-Net architecture on MRI brain tumor data.</li>
+            <li>Studied training stability, class-imbalance effects and documented common failure modes.</li>
+          </ul>
+          <p class="project-tech">
+            Result: U-Net achieved 87.4% accuracy with better segmentation quality and lower validation loss.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="card">
+        <div class="skills-grid">
+
+          <div class="skills-group">
+            <div class="skills-group-title">Core ML & Data</div>
+            <div class="skills-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">pandas</span>
+              <span class="skill-chip">NumPy</span>
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">Feature engineering</span>
+              <span class="skill-chip">Model evaluation</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Deep Learning & ML</div>
+            <div class="skills-chips">
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">TensorFlow (basics)</span>
+              <span class="skill-chip">scikit-learn</span>
+              <span class="skill-chip">CNNs</span>
+              <span class="skill-chip">SVMs</span>
+              <span class="skill-chip">PCA</span>
+              <span class="skill-chip">PyAgrum</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">NLP & Multimodal</div>
+            <div class="skills-chips">
+              <span class="skill-chip">Hugging Face Transformers</span>
+              <span class="skill-chip">Whisper</span>
+              <span class="skill-chip">CLIP</span>
+              <span class="skill-chip">Prompt engineering</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Big Data & Distributed</div>
+            <div class="skills-chips">
+              <span class="skill-chip">PySpark</span>
+              <span class="skill-chip">Hadoop</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-group-title">Tools & Visualization</div>
+            <div class="skills-chips">
+              <span class="skill-chip">Matplotlib</span>
+              <span class="skill-chip">Seaborn</span>
+              <span class="skill-chip">OpenCV</span>
+              <span class="skill-chip">MoviePy</span>
+              <span class="skill-chip">NetworkX</span>
+              <span class="skill-chip">Gephi</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="card">
+        <div class="item-title">Associate 1 – Asset Management Services</div>
+        <div class="item-meta">State Street Corporation · Bangalore, KA · Mar 2023 – Aug 2024</div>
+        <div class="item-body">
+          <ul>
+            <li>Managed custody, settlement and cash operations for global clients including BlackRock, JPMorgan and Goldman Sachs.</li>
+            <li>Analysed trade execution data and failure patterns across DTC/FED/Euroclear, reducing fail rates by ~30% using root-cause metrics.</li>
+            <li>Performed cash forecasting, funding oversight, FX and intraday exposure monitoring, and data-driven analysis of cash/position/pricing breaks.</li>
+            <li>Automated reconciliation checks and optimised workflows, improving operational efficiency and client SLA adherence by ~40%.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <div class="item-title">Master’s Degree – Big Data Science</div>
+        <div class="item-meta">Queen Mary University of London · 2024 – 2025</div>
+      </div>
+      <div style="height: 0.5rem;"></div>
+      <div class="card">
+        <div class="item-title">Bachelor’s Degree – Electronics and Communication Engineering</div>
+        <div class="item-meta">RV College of Engineering · 2018 – 2022</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>
+          The fastest way to reach me is via
+          <a href="mailto:rajarun9476@gmail.com">email</a>.
+          I’m open to roles in data, machine learning and related areas.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Arun Govardhan Raj Obuli · Built with HTML & CSS · Hosted on GitHub Pages
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
